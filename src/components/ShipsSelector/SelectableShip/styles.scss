@@ -1,0 +1,68 @@
+@import 'global-styles/_colors.scss';
+
+.selectable-ship {
+  cursor: pointer;
+  width: 160px;
+  min-height: 140px;
+  position: relative;
+  margin: 16px;
+
+  &:hover {
+    outline: 1px solid $color-primary-1;
+  }
+
+  &__rotate {
+    z-index: 999;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 6px;
+  }
+
+  &__asset {
+    height: 50px;
+    object-fit: contain !important;
+  }
+
+  &__title {
+    overflow-wrap: break-word;
+    text-transform: lowercase;
+    &:first-letter {
+      text-transform: capitalize;
+    }
+  }
+
+  &--SHIP_HORIZONTAL {
+    transform: rotate(0deg);
+    .selectable-ship {
+      &__rotate {
+        top: 6px;
+      }
+    }
+  }
+  
+  &--SHIP_VERTICAL {
+    transform: rotate(270deg);
+    .selectable-ship {
+      &__rotate {
+        bottom: 6px;
+      }
+    }
+  }
+
+  &--selected {
+    outline: 3px solid $color-primary-1;
+    &:hover {
+      outline: 3px solid $color-primary-1;
+    }
+  }
+
+  &--compact {
+    width: 114px;
+    min-height: 100px;
+
+    .selectable-ship {
+      height: 30px;
+    }
+  }
+}

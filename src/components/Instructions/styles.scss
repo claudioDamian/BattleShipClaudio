@@ -1,0 +1,20 @@
+@import 'global-styles/_colors.scss';
+
+.instructions {
+  display: inline-block;
+  text-align: left;
+  padding: 24px 8px;
+  border-radius: 4px;
+  background-color: $color-info-light;
+  color: $color-info;
+
+  &__list {
+    padding: 0;
+    margin: 8px 0 0 0;
+    padding: 0 24px;
+  }
+  &__list-item {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

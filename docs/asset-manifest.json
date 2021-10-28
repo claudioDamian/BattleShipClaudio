@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/battleship/static/css/main.b7892d43.chunk.css",
+    "main.js": "/battleship/static/js/main.3ee3fe6c.chunk.js",
+    "main.js.map": "/battleship/static/js/main.3ee3fe6c.chunk.js.map",
+    "runtime-main.js": "/battleship/static/js/runtime-main.9e463cc9.js",
+    "runtime-main.js.map": "/battleship/static/js/runtime-main.9e463cc9.js.map",
+    "static/js/2.f2a8eebf.chunk.js": "/battleship/static/js/2.f2a8eebf.chunk.js",
+    "static/js/2.f2a8eebf.chunk.js.map": "/battleship/static/js/2.f2a8eebf.chunk.js.map",
+    "index.html": "/battleship/index.html",
+    "precache-manifest.a6ab2d29fcc9124c9eb7a4ffe04c3ebc.js": "/battleship/precache-manifest.a6ab2d29fcc9124c9eb7a4ffe04c3ebc.js",
+    "service-worker.js": "/battleship/service-worker.js",
+    "static/css/main.b7892d43.chunk.css.map": "/battleship/static/css/main.b7892d43.chunk.css.map",
+    "static/js/2.f2a8eebf.chunk.js.LICENSE.txt": "/battleship/static/js/2.f2a8eebf.chunk.js.LICENSE.txt",
+    "static/media/lose.png": "/battleship/static/media/lose.86b4c05e.png",
+    "static/media/rotate.svg": "/battleship/static/media/rotate.813a9947.svg",
+    "static/media/win.png": "/battleship/static/media/win.38b03b0d.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9e463cc9.js",
+    "static/js/2.f2a8eebf.chunk.js",
+    "static/css/main.b7892d43.chunk.css",
+    "static/js/main.3ee3fe6c.chunk.js"
+  ]
+}

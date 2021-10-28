@@ -1,0 +1,32 @@
+@import 'global-styles/_colors.scss';
+
+.board-space {
+  width: 100%;
+  height: 100%;
+  border: 1px solid $color-black-80;
+  cursor: auto;
+  
+  &:hover {
+    border: 3px solid $color-primary-1;
+  }
+
+  &--EMPTY_SPACE {
+    background-color: $color-empty-space;
+  }
+  &--OK_SHIP_SPACE {
+    background-color: $color-ok-ship-space;
+  }
+  &--HIT_SHIP_SPACE {
+    background-color: $color-hit-ship-space;
+  }
+  &--DESTROYED_SHIP_SPACE {
+    background-color: $color-destroyed-ship-space;
+  }
+  &--SHOT_MISSED_SPACE {
+    background-color: $color-shot-missed-space;
+  }
+
+  &--clickable {
+    cursor: pointer;
+  };
+}

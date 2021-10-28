@@ -1,0 +1,32 @@
+@import 'global-styles/_colors.scss';
+
+.status-bar {
+  background-color: #fafafa;
+  border-radius: 4px;
+
+  &__header {
+    background-color: #363636;
+    border-radius: 4px 4px 0 0;
+    color: #fff;
+    padding: 8px 16px;
+  }
+
+  &__body {
+    border-color: #363636;
+    border-radius: 4px;
+    color: #4a4a4a;
+    padding: 16px 24px;
+  }
+
+  &__surrender {
+    padding: 16px 24px;
+  }
+
+  &--compact {
+    .status-bar {
+      &__surrender {
+        padding: 0px 32px;
+      }
+    }
+  }
+}

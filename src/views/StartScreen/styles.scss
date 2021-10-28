@@ -1,0 +1,32 @@
+@import 'global-styles/_colors.scss';
+
+.start-screen {
+  &__instructions-container {
+    padding-bottom: 32px;
+    text-align: center;
+  }
+  &__board-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  &__start-game-container {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  &__cta-container {
+    margin: 16px 0 0 0;
+  }
+
+  &--compact {
+    .start-screen {
+      &__board-container {
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.ships-selector {
+  margin: 0 16px 16px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &--compact {
+    margin: 24px 0 16px 0;
+  }
+}

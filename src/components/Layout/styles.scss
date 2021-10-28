@@ -1,0 +1,33 @@
+@import 'global-styles/_colors.scss';
+
+.layout {
+  background-image: url("../../assets/background.png");
+  background-repeat: repeat;
+  min-width: 300px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  &__card {
+    width: auto;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 32px 0;
+    padding: 32px 64px;
+  }
+
+  &--compact {
+    .layout {
+      &__card {
+        width: 90%;
+        flex-wrap: wrap;
+        padding: 16px;
+      }
+    }
+  }
+}
