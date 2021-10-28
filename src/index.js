@@ -1,18 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as serviceWorker from 'serviceWorker';
-
-import Root from 'Root';
-import BattleshipApp from 'BattleshipApp';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import store from './store';
+import { Provider } from 'react-redux'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Root>
-      <BattleshipApp />
-    </Root>
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
-  // eslint-disable-next-line no-undef
-  document.getElementById('root'),
+  document.getElementById('root')
 );
 
-serviceWorker.register();
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
