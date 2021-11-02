@@ -1,9 +1,12 @@
 import React from 'react';
-import { CheckboxStyled } from './Checkbox.styled';
+import { CheckboxStyled, Label, Wrapper } from './Checkbox.styled';
 
-const Checkbox = () => {
+const Checkbox = ({ handlerCheckBox }) => {
   return (
-    <CheckboxStyled type="checkbox"/>
+    <Wrapper>
+      <CheckboxStyled type="checkbox" value="vertical" onClick={handlerCheckBox}/>
+      <Label>Vertical</Label>
+    </Wrapper>
   )
 };
 

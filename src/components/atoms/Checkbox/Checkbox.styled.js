@@ -38,3 +38,21 @@ export const CheckboxStyled = styled.input(
     }
   `,
 );
+
+export const Label = styled.label(
+  () => css`
+    font-size: 12px;
+    font-weight: 900;
+    opacity: 80%;
+    color: #382323;
+    padding: 0 10px;
+  `,
+);
+
+export const Wrapper = styled.div(
+  () => css`
+    display: flex;
+    flex-direction: row;
+    padding: 0 6px;
+  `,
+);

@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import cpuImpactOnWaterReducer from './slices/CPU/FailedShoots/index';
-import cpuShipsImpactedReducer from './slices/CPU/ShipsImpacted/index';
+import cpuShipsPositionsReducer from './slices/CPU/CPUShipsPositions/index';
 import cpuDestroyedShipsReducer from './slices/CPU/DestroyedShips/index';
 import playerShipsImpactedReducer from './slices/Player/ShipsImpacted/index';
 import playerFailImpactsReducer from './slices/Player/FailImpacts/index';
@@ -9,7 +9,7 @@ import playerShipsPositionsReducer from './slices/Player/ShipsPositions/index';
 
 export default configureStore({
   reducer: {
-    cpuShipImpactedsStore: cpuShipsImpactedReducer,
+    cpuShipsPositionsStore: cpuShipsPositionsReducer,
     cpuMissedStore: cpuImpactOnWaterReducer,
     cpuDestroyedShipsStore: cpuDestroyedShipsReducer,
     playerImpactShipsStore: playerShipsImpactedReducer,
