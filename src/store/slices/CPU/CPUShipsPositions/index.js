@@ -65,16 +65,16 @@ export const cpuShipsPositionsSlice = createSlice({
       cpuTotalShips: 0,
       cpuStartGame: false,
       shipsSelected: 0,
+      cpuSquareId: null,
+      cpuSquaresId: [],
     },
   },
   reducers: {
     cpuPositions: (state, {payload}) => {
-      console.log('payload > ', payload);
       state.cpuShipsPositions.cpuPositions.push(payload);
     },
     cpuUpdatePositions: (state, {payload}) => {
-      console.log('payload => ', payload);
-      state.cpuShipsPositions.cpuPositions[payload.index].position = payload.position;
+      state.cpuShipsPositions.cpuPositions[payload.index].positions = payload.position;
     },
     cpuStartGame: (state, {payload}) => {
       state.cpuShipsPositions.cpuStartGame = payload;
@@ -82,6 +82,12 @@ export const cpuShipsPositionsSlice = createSlice({
     cpuShipSelected: (state, {payload}) => {
       state.cpuShipsPositions.shipsSelected += payload;
     },
+    cpuSquareId: (state, {payload}) => {
+      state.cpuShipsPositions.cpuSquareId = payload;
+    },
+    cpuSquaresId: (state, {payload}) => {
+      state.cpuShipsPositions.cpuSquaresId.push(payload);
+    }, 
   } 
 })
 
@@ -90,6 +96,8 @@ export const {
   cpuStartGame,
   cpuUpdatePositions,
   cpuShipSelected,
+  cpuSquareId,
+  cpuSquaresId,
 } = cpuShipsPositionsSlice.actions
 
 export default cpuShipsPositionsSlice.reducer

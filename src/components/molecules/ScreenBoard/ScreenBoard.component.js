@@ -10,14 +10,13 @@ import Board from "../../atoms/Board/Board.component";
 const ScreenBoard = ({}) => {
   const board = useSelector((state) => state.playerShipsPositionsStore.shipsPositions.board);
   const shipsPositions = useSelector((state) => state.playerShipsPositionsStore.shipsPositions.ships);
-  const shipsCount = useSelector((state) => state.playerShipsPositionsStore.shipsPositions.totalShips);
-  const shipsInSquares = useSelector((state) => state.playerShipsPositionsStore.shipsPositions);
   const lastSelectedShip = shipsPositions[shipsPositions.length - 1];
   const dispatch = useDispatch();
 
   const handlerShip = ({squareId}) => {
     const finishPosition = [squareId];
     let initialPosition = squareId;
+
     Array.from(Array(lastSelectedShip.spaces-1)).forEach((i, index) => {
       lastSelectedShip.vertical ? initialPosition = initialPosition +10 : initialPosition += 1;  
       finishPosition.push(initialPosition)
