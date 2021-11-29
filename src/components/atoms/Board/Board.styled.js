@@ -16,13 +16,9 @@ export const Square = styled.div(
   ({color}) => css`
     display: flex;
     justify-content: center;
-    align-item: center;
+    align-items: center;
     padding: 20px 0;
     background-color: ${color};
     cursor: pointer;
-
-    :hover {
-      background-color: #61C5FA;
-    }
   `
 );

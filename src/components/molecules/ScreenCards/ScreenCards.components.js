@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Card from '../Card/Card.component';
 import { CardsContainer } from './ScreenCards.styled';
 
-const ScreenCards = ({ cardHandlerClick, checkBoxValue, disable = false }) => {
+const ScreenCards = ({cardHandlerClick, checkBoxValue, disable = false}) => {
   return (
     <CardsContainer>
       {[1,2,3].map(
@@ -11,9 +12,10 @@ const ScreenCards = ({ cardHandlerClick, checkBoxValue, disable = false }) => {
           onClickEvent={() => cardHandlerClick({
             shipName: 'crusier',
             code: `${i}c`,
+            color: 'white',
             spaces: 3,
             position: null,
-            state: 'fighting',
+            impacts: [],
             selected: false,
             vertical: false
           })}
@@ -29,9 +31,10 @@ const ScreenCards = ({ cardHandlerClick, checkBoxValue, disable = false }) => {
         onClickEvent={() => cardHandlerClick({
           shipName: 'carrier',
           code: '4c',
+          color: 'white',
           spaces: 4,
           position: null,
-          state: 'fighting',
+          impacts: [],
           selected: false,
           vertical: false,
         })}
@@ -46,9 +49,10 @@ const ScreenCards = ({ cardHandlerClick, checkBoxValue, disable = false }) => {
         onClickEvent={() => cardHandlerClick({
           shipName: 'submarine',
           code: '2s',
+          color: 'white',
           spaces: 2,
           position: null,
-          state: 'fighting',
+          impacts: [],
           selected: false,
           vertical: false,
         })}
@@ -63,4 +67,7 @@ const ScreenCards = ({ cardHandlerClick, checkBoxValue, disable = false }) => {
   )
 };
 
+ScreenCards.prototype = {
+  cardHandlerClick: PropTypes.func,
+}
 export default ScreenCards;

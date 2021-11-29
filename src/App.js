@@ -1,10 +1,15 @@
+import React from 'react';
+import store from './store';
+import { Provider } from 'react-redux'
 import './App.css';
-import PlayerBoard from '../src/components/organisms/PlayerBoard/PlayerBoard.component';
+import PlayScreen from './components/organisms/PlayScreen/PlayScreen.component';
 
 function App() {
   return (
     <div className="App">
-      <PlayerBoard />
+      <Provider store={store}>
+        <PlayScreen />
+      </Provider>
     </div>
   );
 }
