@@ -12,7 +12,7 @@ const TurnNameCard = ({ title, name }) => {
   )
 };
 
-TurnNameCard.protoTypes = {
+TurnNameCard.propTypes = {
   title: PropTypes.string,
   name: PropTypes.string
 }

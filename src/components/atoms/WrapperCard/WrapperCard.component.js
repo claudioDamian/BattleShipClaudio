@@ -10,9 +10,9 @@ const WrapperCard = ({children, disabled = false, success = false}) => {
   )
 };
 
-WrapperCard.prototype = {
+WrapperCard.propTypes = {
   children: PropTypes.node,
-  disable: PropTypes.bool,
+  disabled: PropTypes.bool,
   success: PropTypes.bool,
 }
 export default WrapperCard;

@@ -10,7 +10,7 @@ const Button = ({disabled, handlerClick, label}) => {
   )
 };
 
-Button.prototype = {
+Button.propTypes = {
   disabled: PropTypes.string,
   handlerClick: PropTypes.func,
   label: PropTypes.string,

@@ -76,7 +76,7 @@ const ScreenBoard = ({shipSelected}) => {
   );
   
 };
-ScreenBoard.proptype = {
+ScreenBoard.propTypes = {
   shipSelected: PropTypes.node,  
 }
 

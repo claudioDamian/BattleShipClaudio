@@ -234,12 +234,12 @@ const CpuScreenBoard = ({getShip}) => {
     }
   },[cpuStart,cpuSquareId]);
 
-  CpuScreenBoard.prototype = {
-    getShip: PropTypes.func
-  }
   return (
     <Board squares={cpuBoard} handlerClick={cpuHandlerBoard} />
-  )
-};
-
+    )
+  };
+  
+  CpuScreenBoard.propTypes = {
+    getShip: PropTypes.func
+  }
 export default CpuScreenBoard;

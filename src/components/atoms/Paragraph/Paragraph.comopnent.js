@@ -10,7 +10,7 @@ const Paragraph = ({paragraph, opacity = false, fontSize = false}) => {
   )
 };
 
-Paragraph.prototype = {
+Paragraph.propTypes = {
   paragraph: PropTypes.string,
   opacity: PropTypes.bool,
   fontSize: PropTypes.bool,

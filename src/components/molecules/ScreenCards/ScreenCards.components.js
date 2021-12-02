@@ -4,7 +4,7 @@ import Card from '../Card/Card.component';
 import { CardsContainer, WrapperContainer } from './ScreenCards.styled';
 import Instructions from '../Instructions/Instruction.component';
 
-const ScreenCards = ({cardHandlerClick, checkBoxValue, ships}) => {
+const ScreenCards = (cardHandlerClick, checkBoxValue, ships) => {
   return (
     <WrapperContainer>
     <Instructions />
@@ -73,7 +73,9 @@ const ScreenCards = ({cardHandlerClick, checkBoxValue, ships}) => {
   )
 };
 
-ScreenCards.prototype = {
+ScreenCards.propTypes = {
   cardHandlerClick: PropTypes.func,
+  checkBoxValue: PropTypes.func,
+  ships: PropTypes.node,
 }
 export default ScreenCards;

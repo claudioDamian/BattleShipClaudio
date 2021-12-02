@@ -19,7 +19,7 @@ const Card = ({handlerCheckboxValue, onClickEvent, disabled, shipImg, shipName, 
   )
 };
 
-Card.prototype = {
+Card.propTypes = {
   disabled: PropTypes.bool,
   handlerCheckboxValue: PropTypes.func,
   onClickEvent: PropTypes.func,

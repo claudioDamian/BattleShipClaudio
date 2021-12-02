@@ -11,7 +11,7 @@ const Checkbox = ({handlerCheckBox}) => {
   )
 };
 
-Checkbox.prototype = {
+Checkbox.propTypes = {
   handlerCheckBox: PropTypes.func
 }
 export default Checkbox;

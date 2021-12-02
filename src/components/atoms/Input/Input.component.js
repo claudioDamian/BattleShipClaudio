@@ -12,7 +12,7 @@ const Input = ({textValue, handlerTextValue}) => {
   )
 };
 
-Input.prototype = {
+Input.propTypes = {
   textValue: PropTypes.string,
   handlerTextValue: PropTypes.func
 }

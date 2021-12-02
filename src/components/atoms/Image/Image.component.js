@@ -8,7 +8,7 @@ const CardImg = ({shipImg}) => {
   )
 };
 
-CardImg.prototype = {
+CardImg.propTypes = {
   shipImg: PropTypes.string,
 }
 export default CardImg;
