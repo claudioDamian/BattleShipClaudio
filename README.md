@@ -30,6 +30,9 @@ Input with name and Button is enable
 
 In the project directory, you can run:
 
+## npm install
+
+First install dependencies, then you can run the server
 ### `npm start`
 
 Runs the app in the development mode.\
