@@ -1,6 +1,31 @@
 # Battleship
 
 The Battleship game, Player vs CPU.
+
+# First screen
+![image](https://user-images.githubusercontent.com/14924992/144461272-092f7dcc-30fe-48ed-8388-e4fcbef1bc2c.png)
+
+# First screen, selecting Ships and put into the board
+![image](https://user-images.githubusercontent.com/14924992/144461753-75c15ede-eed4-46c4-88e8-a2b677794968.png)
+
+# Second screen, enter the name player
+
+The Button is disabled if the name is empty
+![image](https://user-images.githubusercontent.com/14924992/144462155-fe67537d-6b41-438f-8a6c-1f8175d99bc3.png)
+
+Input with name and Button is enable
+![image](https://user-images.githubusercontent.com/14924992/144462504-bdb9f442-73b0-4b08-9559-2e0c61b98e9e.png)
+
+# Screen game
+![image](https://user-images.githubusercontent.com/14924992/144462959-28ebe007-bb6b-4d4c-ac5a-82ebeeb81771.png)
+
+![image](https://user-images.githubusercontent.com/14924992/144463126-01545f65-1e55-4ae8-9345-73f95d81716a.png)
+
+# Winner screen
+![image](https://user-images.githubusercontent.com/14924992/144463354-adf64bee-ef5d-4705-8cbd-b70acb6717b3.png)
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
