@@ -11,6 +11,7 @@ export const playerSlice = createSlice({
           spaces: null,
           code: null,
           color: 'white',
+          disabled: false,
           squareId: index,
         }
       )),
@@ -64,6 +65,7 @@ export const playerSlice = createSlice({
             spaces: null,
             code: null,
             color: 'white',
+            disabled: false,
             squareId: index,
           }
         )),

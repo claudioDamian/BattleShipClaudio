@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from '../Card/Card.component';
-import { CardsContainer } from './ScreenCards.styled';
+import { CardsContainer, WrapperContainer } from './ScreenCards.styled';
+import Instructions from '../Instructions/Instruction.component';
 
-const ScreenCards = ({cardHandlerClick, checkBoxValue, disable = false}) => {
+const ScreenCards = ({cardHandlerClick, checkBoxValue, ships}) => {
   return (
+    <WrapperContainer>
+    <Instructions />
     <CardsContainer>
       {[1,2,3].map(
         (i) => (<Card
@@ -21,9 +24,9 @@ const ScreenCards = ({cardHandlerClick, checkBoxValue, disable = false}) => {
           })}
           shipImg="cruiser.png"
           shipName="Cruiser"
-          disable={disable}
           opacity
           count={`3 Spaces`}
+          disabled={ships?.find(p => p.code === `${i}c`)?.selected}
           handlerCheckboxValue={checkBoxValue}
         />)
       )}
@@ -40,9 +43,10 @@ const ScreenCards = ({cardHandlerClick, checkBoxValue, disable = false}) => {
         })}
         shipImg="carrier.png"
         shipName="Carrier"
-        disable={disable}
-        opacity
         count={`4 Spaces`}
+        code={'4c'}
+        disabled={ships?.find(p => p.code === '4c')?.selected}
+        opacity
         handlerCheckboxValue={checkBoxValue}
       />
       <Card
@@ -58,12 +62,14 @@ const ScreenCards = ({cardHandlerClick, checkBoxValue, disable = false}) => {
         })}
         shipImg="submarine.png"
         shipName="Submarine"
-        disable={disable}
-        opacity
         count={`2 Spaces`}
+        code={'2s'}
+        disabled={ships?.find(p => p.code === '2s')?.selected}
+        opacity
         handlerCheckboxValue={checkBoxValue}
       />
     </CardsContainer>
+    </WrapperContainer>
   )
 };
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   playerShipsPositioned,
@@ -22,12 +22,12 @@ import ScreenCards from '../../molecules/ScreenCards/ScreenCards.components';
 import ScreenStart from '../../molecules/ScreenStart/ScreenStart.component';
 import CpuScreenBoard from '../../molecules/CpuScreenBoard/CpuScreenBoard.component';
 import TurnNameCard from '../../molecules/TurnNameCard/TurnNameCard.component';
-import WinnerMessage from '../../molecules/WinnerMessage/WinnerMessage';
+import WinnerMessage from '../../molecules/WinnerMessage/WinnerMessage.component';
 import Button from '../../atoms/Button/Button.component';
 
 export const PlayScreen = () => {
   const dispatch = useDispatch();
-
+  const [shipSelected, setShipSelected] = useState(null);
   const cpuIsTheWin = useSelector((state) => state.cpuStore.cpuState.cpuWin);
   const cpuStartToPlay = useSelector((state) => state.cpuStore.cpuState.cpuStartGame);
   const cpuTotalShips = useSelector((state) => state.cpuStore.cpuState.shipsSelected);
@@ -40,7 +40,10 @@ export const PlayScreen = () => {
   const playerWin = useSelector((state) => state.playerStore.playerState.playerWin);
 
   const handlerCard = ship => {
-    dispatch(playerShipsPositioned(ship));
+    if(!playerShips?.find(p => p.code === ship?.code)) {
+      dispatch(playerShipsPositioned(ship));
+      setShipSelected(ship);
+    }
   };
 
   const handlerStartGame = () => {
@@ -85,15 +88,27 @@ export const PlayScreen = () => {
     return (
       <>
       <PlayScreenWrapper>
-        <PlayerScreenBoard />
+        <PlayerScreenBoard shipSelected={shipSelected} />
         {cpuStartToPlay && <CpuScreenBoard  getShip={getShip} />}
-        {playerTotalShips > 14 && !cpuStartToPlay && <ScreenStart handlerClickButton={handlerStartGame} handlerInputText={handlerInputText} />}
-        {playerTotalShips < 15 && <ScreenCards cardHandlerClick={(value) => handlerCard(value)} checkBoxValue={getCheckBoxValue} />}
+        {playerTotalShips > 14 && !cpuStartToPlay && (
+          <ScreenStart
+            handlerClickButton={handlerStartGame}
+            handlerInputText={handlerInputText}
+            disabled={playerName}
+          />
+        )}
+        {playerTotalShips < 15 && (
+          <ScreenCards
+            cardHandlerClick={(value) => handlerCard(value)}
+            checkBoxValue={getCheckBoxValue}
+            ships={playerShips}
+          />
+        )}
       </PlayScreenWrapper>
       <>
         {cpuStartToPlay && (
         <Wrapper>
-          <Button handlerClick={playerSurrender} label="Surrender" />
+          <Button disabled={playerName} handlerClick={playerSurrender} label="Surrender" />
           <TurnNameCard title='Is turn of ' name={isPlayerTurn ? playerName : 'CPU'} />
         </Wrapper>
         )}
@@ -103,7 +118,11 @@ export const PlayScreen = () => {
   }
   else {
     return (
-      <WinnerMessage message={`THE WINNER IS ${cpuIsTheWin ? 'THE CPU': playerName}!`} handlerClickPlayAgain={prepareNewGame}/>
+      <WinnerMessage
+        disabled={playerName}
+        message={`THE WINNER IS ${cpuIsTheWin ? 'THE CPU': playerName}!`}
+        handlerClickPlayAgain={prepareNewGame}
+      />
     )
   }
 };

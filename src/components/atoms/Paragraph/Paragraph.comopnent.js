@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ParagraphTitle } from './Paragraph.styled';
 
-const Paragraph = ({paragraph, opacity = false}) => {
+const Paragraph = ({paragraph, opacity = false, fontSize = false}) => {
   return (
-  <ParagraphTitle opacity={opacity}>
+  <ParagraphTitle opacity={opacity} fontSize={fontSize} >
     {paragraph}
   </ParagraphTitle>
   )
@@ -13,5 +13,6 @@ const Paragraph = ({paragraph, opacity = false}) => {
 Paragraph.prototype = {
   paragraph: PropTypes.string,
   opacity: PropTypes.bool,
+  fontSize: PropTypes.bool,
 }
 export default Paragraph;

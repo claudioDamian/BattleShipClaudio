@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Wrapper } from './WrapperCard.styled';
 
-const WrapperCard = ({children, disable}) => {
+const WrapperCard = ({children, disabled = false, success = false}) => {
   return (
-    <Wrapper disable={disable} >
+    <Wrapper disabled={disabled} success={success}>
       {children}
     </Wrapper>
   )
@@ -13,5 +13,6 @@ const WrapperCard = ({children, disable}) => {
 WrapperCard.prototype = {
   children: PropTypes.node,
   disable: PropTypes.bool,
+  success: PropTypes.bool,
 }
 export default WrapperCard;

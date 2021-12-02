@@ -13,12 +13,13 @@ export const SquaresContainer = styled.div`
 `;
 
 export const Square = styled.div(
-  ({color}) => css`
+  ({color, disabled}) => css`
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px 0;
     background-color: ${color};
-    cursor: pointer;
+    cursor: ${disabled ? 'no-allowed': 'pointer'};
+    pointer-events: ${disabled ? 'none' : 'display'};
   `
 );

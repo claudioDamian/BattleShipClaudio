@@ -6,9 +6,9 @@ import Checkbox from '../../atoms/Checkbox/Checkbox.component';
 import Paragraph from '../../atoms/Paragraph/Paragraph.comopnent';
 import { ContentContainer } from './Card.styled';
 
-const Card = ({handlerCheckboxValue, onClickEvent, disable, shipImg, shipName, count, opacity = false}) => {
+const Card = ({handlerCheckboxValue, onClickEvent, disabled, shipImg, shipName, count, opacity = false}) => {
   return (
-    <WrapperCard disable={disable}>
+    <WrapperCard disabled={disabled}>
       <ContentContainer onClick={onClickEvent}>
         <CardImage shipImg={shipImg} />
         <Paragraph paragraph={shipName}/>
@@ -20,6 +20,7 @@ const Card = ({handlerCheckboxValue, onClickEvent, disable, shipImg, shipName, c
 };
 
 Card.prototype = {
+  disabled: PropTypes.bool,
   handlerCheckboxValue: PropTypes.func,
   onClickEvent: PropTypes.func,
   shipImg: PropTypes.string,

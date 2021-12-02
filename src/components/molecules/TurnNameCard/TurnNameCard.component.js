@@ -6,8 +6,8 @@ import { WrapperCard } from './TurnNameCard.styled';
 const TurnNameCard = ({ title, name }) => {
   return (
     <WrapperCard>
-      <Paragraph paragraph={title}/>
-      <Paragraph paragraph={name} opacity />
+      <Paragraph paragraph={title} fontSize />
+      <Paragraph paragraph={name} opacity fontSize />
     </WrapperCard>
   )
 };

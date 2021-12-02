@@ -2,15 +2,16 @@ import React from "react";
 import PropTypes from 'prop-types';
 import { MyButton } from "./Button.styled";
 
-const Button = ({handlerClick, label}) => {
+const Button = ({disabled, handlerClick, label}) => {
   return (
-    <MyButton onClick={() => handlerClick()}>
+    <MyButton disabled={!disabled} onClick={() => handlerClick()}>
       {label}
     </MyButton>
   )
 };
 
 Button.prototype = {
+  disabled: PropTypes.string,
   handlerClick: PropTypes.func,
   label: PropTypes.string,
 }

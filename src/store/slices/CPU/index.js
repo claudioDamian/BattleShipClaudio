@@ -67,6 +67,7 @@ export const cpuSlice = createSlice({
           spaces: null,
           code: null,
           color: 'white',
+          disabled: false,
           squareId: index,
         }
       )),
@@ -107,7 +108,8 @@ export const cpuSlice = createSlice({
       state.cpuState.cpuShotTurn = payload;
     },
     cpuUpdateBoard: (state, {payload}) => {
-      state.cpuState.cpuBoard[payload?.index].color = payload?.color; 
+      state.cpuState.cpuBoard[payload?.index].color = payload?.color;
+      state.cpuState.cpuBoard[payload?.index].disabled = payload?.disabled;
     },
     cpuImpacts: (state, {payload}) => {
       const cpuShip = state.cpuState.cpuShipsPositions.find(c => c.code === payload.code);
@@ -199,6 +201,7 @@ export const cpuSlice = createSlice({
             spaces: null,
             code: null,
             color: 'white',
+            disabled: false,
             squareId: index,
           }
         )),

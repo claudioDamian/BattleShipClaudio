@@ -1,18 +1,19 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import {
   playerUpdateShipPosition,
   playerUpdateBoard,
 } from '../../../store/slices/Player';
 import Board from "../../atoms/Board/Board.component";
 
-const ScreenBoard = () => {
+const ScreenBoard = ({shipSelected}) => {
   const dispatch = useDispatch();
 
   const board = useSelector((state) => state.playerStore.playerState.board);
-  const playerShipsPositions = useSelector((state) => state.playerStore.playerState.ships);
+  const playerShips = useSelector((state) => state.playerStore.playerState.ships);
   const totalShips = useSelector((state) => state.playerStore.playerState.totalShips);
-  const lastSelectedShip = playerShipsPositions.at(- 1);
+  const lastSelectedShip = playerShips.at(- 1);
 
   /**
    * @property {function} handlerShip - function to position the Player's ship on the board and 
@@ -20,7 +21,7 @@ const ScreenBoard = () => {
    * @param {number} squareId - ID of the square selected by the Player 
    */
   const handlerShip = ({squareId}) => {
-    if(playerShipsPositions.length) {
+    if(playerShips.length && !playerShips?.find(p => p.code === shipSelected.code).selected) {
       const finishPosition = [squareId];
       let initialPosition = squareId;
   
@@ -45,7 +46,7 @@ const ScreenBoard = () => {
         const flagfound = finishPosition.find(e => e > 99)
         if(flagfound) return
       }
-      dispatch(playerUpdateShipPosition({index: playerShipsPositions.length -1, position: finishPosition }));
+      dispatch(playerUpdateShipPosition({index: playerShips.length -1, position: finishPosition }));
     }
   };
 
@@ -54,8 +55,8 @@ const ScreenBoard = () => {
    * squares of the ship will painted in black
    */
   const changeSquareColor = () => {
-    if(playerShipsPositions.length) {
-      const { position } = playerShipsPositions.at(-1);
+    if(playerShips.length) {
+      const { position } = playerShips.at(-1);
       if(position?.length){
         position?.map(p => {
         dispatch(playerUpdateBoard({...board[p], color: 'black'}));
@@ -65,12 +66,18 @@ const ScreenBoard = () => {
     }
    };
   useEffect(() => {
-    if(totalShips < 15) changeSquareColor();
-  },[playerShipsPositions]);
+    if(totalShips < 15 && playerShips?.find(p => p.code === shipSelected?.code)?.selected) {
+      changeSquareColor();
+    }
+  },[playerShips]);
 
   return (
     <Board handlerClick={handlerShip} squares={board} />
   );
+  
 };
+ScreenBoard.proptype = {
+  shipSelected: PropTypes.node,  
+}
 
 export default ScreenBoard;

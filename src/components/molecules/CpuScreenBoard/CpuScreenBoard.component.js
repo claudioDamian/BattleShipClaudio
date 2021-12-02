@@ -133,7 +133,7 @@ const CpuScreenBoard = ({getShip}) => {
     cpuShipsPositionsArray.forEach(s => {
       if(s.positions?.length === s.impacts?.length) {
         s.impacts?.forEach(i => {
-          dispatch(cpuUpdateBoard({index: i, color: 'red'}))
+          dispatch(cpuUpdateBoard({index: i, color: 'red', disabled: true}))
         })
       }
     })
@@ -203,9 +203,9 @@ const CpuScreenBoard = ({getShip}) => {
     if(impact?.length) {
       dispatch(cpuImpacts({code: impact[0].code, shot: squareId}));
       dispatch(playerNumberOfImpacts(1));
-      dispatch(cpuUpdateBoard({index: squareId, color: 'orange'}));
+      dispatch(cpuUpdateBoard({index: squareId, color: 'orange', disabled: true}));
     } else {
-      dispatch(cpuUpdateBoard({index: squareId, color: '#61C5FA'}));
+      dispatch(cpuUpdateBoard({index: squareId, color: '#61C5FA', disabled: true}));
     }
     dispatch(playerTurn(!isPlayerTurn));
   };

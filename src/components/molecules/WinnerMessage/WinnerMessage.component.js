@@ -4,16 +4,17 @@ import Paragraph from '../../atoms/Paragraph/Paragraph.comopnent';
 import Button from '../../atoms/Button/Button.component';
 import { WrapperCard } from './WinnerMessage.styled';
 
-const WinnerMessage = ({ handlerClickPlayAgain, message }) => {
+const WinnerMessage = ({ disabled, handlerClickPlayAgain, message }) => {
   return (
     <WrapperCard>
       <Paragraph paragraph={message} />
-      <Button handlerClick={() => handlerClickPlayAgain()} label='PLAY AGAIN' />
+      <Button disabled={disabled} handlerClick={() => handlerClickPlayAgain()} label='PLAY AGAIN' />
     </WrapperCard>
   )
 };
 
 WinnerMessage.propTypes = {
+  disabled: PropTypes.string,
   handlerClickPlayAgain: PropTypes.func,
   message: PropTypes.string,
 }
